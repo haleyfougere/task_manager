@@ -3,13 +3,8 @@ import './App.css';
 
 function App() {
   return (
-    <div>
-      <header className="App-header">
-          Task Manager
-      </header>
-      <body>
-
-      </body>
+    <div className='App-header'>
+      <h1>Task Manager</h1>
     </div>
   );
 }
