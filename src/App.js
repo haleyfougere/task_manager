@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
@@ -6,6 +7,9 @@ function App() {
       <header className="App-header">
           Task Manager
       </header>
+      <body>
+
+      </body>
     </div>
   );
 }
