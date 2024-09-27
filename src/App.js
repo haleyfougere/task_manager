@@ -18,8 +18,13 @@ function App() {
       setNewTask('');
     } else {
       // If the input is blank, show a pop-up alert
-      alert('Oops, the task is blank! Please enter a task.');
+      alert('You cannot enter a blank task! Please enter a task.');
     }
+  };
+
+  // toggle the task completion field
+  const toggleTaskCompletion = (index) => {
+    // code to get to the specific task and update the completion field
   };
   
   return (
