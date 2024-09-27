@@ -16,6 +16,9 @@ function App() {
       setTasks([...tasks, {text: newTask, completed: false}]);
       // reset the input field
       setNewTask('');
+    } else {
+      // If the input is blank, show a pop-up alert
+      alert('Oops, the task is blank! Please enter a task.');
     }
   };
   
