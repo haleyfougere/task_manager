@@ -24,8 +24,19 @@ function App() {
 
   // toggle the task completion field
   const toggleTaskCompletion = (index) => {
-    // code to get to the specific task and update the completion field
+    // code to get the specific task to toggle completion true and false
+    const updatedTasks = tasks.map((task, i) => 
+      i === index ? {...task, completed: !task.completed } : task
+
+    );
+    setTasks(updatedTasks);
   };
+
+    // Delete a task
+    const deleteTask = (index) => {
+      const updatedTasks = tasks.filter((_, i) => i !== index);
+      setTasks(updatedTasks);
+    };
   
   return (
     <div className='App-header'>
@@ -40,6 +51,16 @@ function App() {
         />
         <button onClick={addTask}>Add Task</button>
       </div>
+      <ul className='task-list'>
+      {tasks.map((task, index) => (
+          <li key={index} className={task.completed ? 'completed' : ''}>
+            <span onClick={() => toggleTaskCompletion(index)}>
+              {task.text}
+            </span>
+            <button onClick={() => deleteTask(index)}>Delete</button>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
