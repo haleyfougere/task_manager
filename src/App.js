@@ -51,16 +51,16 @@ function App() {
         />
         <button onClick={addTask}>Add Task</button>
       </div>
-      <ul className='task-list'>
+      <div className='task-grid'>
       {tasks.map((task, index) => (
-          <li key={index} className={task.completed ? 'completed' : ''}>
-            <span onClick={() => toggleTaskCompletion(index)}>
+          <div key={index} className={task.completed ? 'completed' : ''}>
+            <span onClick={() => toggleTaskCompletion(index)} className='task-text'>
               {task.text}
             </span>
-            <button onClick={() => deleteTask(index)}>Delete</button>
-          </li>
+            <button className='delete-button' onClick={() => deleteTask(index)}>Delete</button>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
